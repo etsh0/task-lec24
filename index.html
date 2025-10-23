@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="start-content">
+                <h1>Welcome to the Quiz!</h1>
+                <p>Test your knowledge with 5 random questions</p>
+                <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+                <button id="show-results-btn" class="btn btn-primary">Show Results</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="question-counter">
+                    <span id="current-question">1</span> / <span id="total-questions">5</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-text">Question text will appear here</h2>
+                <div id="options-container" class="options-container">
+                    <button class="option correct" data-index="0">Option A</button>
+                    <button class="option incorrect" data-index="1">Option B</button>
+                    <button class="option" data-index="2">Option C</button>
+                    <button class="option" data-index="3">Option D</button>
+                </div>
+            </div>
+            
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn btn-secondary" disabled>Next Question</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <h1>Quiz Complete!</h1>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="score">4</span> <span>/</span> <span id="total">5</span>
+                    </div>
+                    <p id="score-message">Excellent! Great job!</p>
+                </div>
+                <div class="answers-summary">
+                    <h3>Your Answers:</h3>
+                    <div id="answers-list">
+                        <div class="answer-item correct">
+                            <div class="answer-text">
+                                <strong>Q1:</strong> What is the capital of France?<br>
+                                <small>Your answer: Paris</small><br>
+                                <small>Correct answer: Paris</small>
+                            </div>
+                            <div class="answer-status correct">Correct</div>
+                        </div>
+                        <div class="answer-item correct">
+                            <div class="answer-text">
+                                <strong>Q2:</strong> Which planet is known as the Red Planet?<br>
+                                <small>Your answer: Mars</small><br>
+                                <small>Correct answer: Mars</small>
+                            </div>
+                            <div class="answer-status correct">Correct</div>
+                        </div>
+                        <div class="answer-item incorrect">
+                            <div class="answer-text">
+                                <strong>Q3:</strong> What is 2 + 2?<br>
+                                <small>Your answer: 3</small><br>
+                                <small>Correct answer: 4</small>
+                            </div>
+                            <div class="answer-status incorrect">Incorrect</div>
+                        </div>
+                        <div class="answer-item correct">
+                            <div class="answer-text">
+                                <strong>Q4:</strong> Who painted the Mona Lisa?<br>
+                                <small>Your answer: Leonardo da Vinci</small><br>
+                                <small>Correct answer: Leonardo da Vinci</small>
+                            </div>
+                            <div class="answer-status correct">Correct</div>
+                        </div>
+                        <div class="answer-item correct">
+                            <div class="answer-text">
+                                <strong>Q5:</strong> What is the largest mammal in the world?<br>
+                                <small>Your answer: Blue Whale</small><br>
+                                <small>Correct answer: Blue Whale</small>
+                            </div>
+                            <div class="answer-status correct">Correct</div>
+                        </div>
+                    </div>
+                </div>
+                <button id="restart-btn" class="btn btn-primary">Take Quiz Again</button>
+            </div>
+        </div>
+
+        <!-- User Attemps -->   
+        <div class="user-attemps screen " id="user-attemps">
+            <div class="user-results-content">
+                <h2>Your Past Attempts 📊</h2>
+                <ul id="results-list">
+                    <li>Attempt 1 : 4 / 5</li>
+                    <li>Attempt 2 : 4 / 5</li>
+                    <li>Attempt 3 : 4 / 5</li>
+                </ul>
+                <div class="close-results-btn">
+                    <button id="close-results" class="btn btn-primary">Close</button>
+                    <button id="clear-results" class="btn btn-primary">Clear All Results</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>
